@@ -1,14 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (4.2.0)
-      activesupport (= 4.2.0)
+    activemodel (4.2.1)
+      activesupport (= 4.2.1)
       builder (~> 3.1)
-    activerecord (4.2.0)
-      activemodel (= 4.2.0)
-      activesupport (= 4.2.0)
+    activerecord (4.2.1)
+      activemodel (= 4.2.1)
+      activesupport (= 4.2.1)
       arel (~> 6.0)
-    activesupport (4.2.0)
+    activesupport (4.2.1)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -20,11 +20,16 @@ GEM
     diff-lcs (1.2.5)
     ethon (0.7.3)
       ffi (>= 1.3.0)
-    ffi (1.9.7)
+    faker (1.4.3)
+      i18n (~> 0.5)
+    ffi (1.9.8)
     i18n (0.7.0)
+    jsmin (1.0.1)
     json (1.8.2)
     method_source (0.8.2)
     minitest (5.5.1)
+    newrelic_rpm (3.11.1.284)
+    pg (0.18.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -57,8 +62,12 @@ GEM
     sinatra-activerecord (2.0.5)
       activerecord (>= 3.2)
       sinatra (~> 1.0)
+    sinatra-assetpack (0.3.3)
+      jsmin
+      rack-test
+      sinatra
+      tilt (>= 1.3.0, < 2.0)
     slop (3.6.0)
-    sqlite3 (1.3.10)
     thread_safe (0.3.5)
     tilt (1.4.1)
     typhoeus (0.7.1)
@@ -71,7 +80,10 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  faker
   json
+  newrelic_rpm
+  pg
   pry
   rack
   rack-test
@@ -80,5 +92,5 @@ DEPENDENCIES
   shotgun
   sinatra
   sinatra-activerecord
-  sqlite3
+  sinatra-assetpack
   typhoeus
